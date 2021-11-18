@@ -63,11 +63,11 @@ void deleteStock::BorrarStock(){                // Descuenta la cant. de Stock a
 
                     if(!strcmp(X.CODIGO,Y.CODIGO)){     // Recorro "temp" hasta encontrar mi X.CODIGO
 
-                                fseek(FP,long (-1)*sizeof(X),1);                //Muevo al ventana de FP 1 lugar hacia atras desde donde estoy.
+                                fseek(FP,long (-1)*sizeof(X),1);                // Muevo al ventana de FP 1 lugar hacia atras desde donde estoy.
 
                                 strcpy(X.PRODUCTO,Y.PRODUCTO);                  // A produto X le copio la descripción de producto Y.
 
-                                X.CANTIDAD = Y.CANTIDAD - X.CANTIDAD;           //A la cantidad de Stock que decrementar le resto la cantidad del Stock de X
+                                X.CANTIDAD = Y.CANTIDAD - X.CANTIDAD;           // A la cantidad de Stock que decrementar le resto la cantidad del Stock de X
 
                                 fwrite(&X,sizeof(X),1,FP);                      // Modifico el registro
                                 fclose(FP);
