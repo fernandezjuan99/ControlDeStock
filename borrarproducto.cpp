@@ -53,7 +53,7 @@ void deleteProducto::eliminarProducto(){
                 }
 
 
-                // Depuro el archivo "temp" y creando un archivo "temp2"
+                // Depuro el archivo "temp" creando un archivo "temp2"
 
                 fread(&X,sizeof(X),1,FP);
 
