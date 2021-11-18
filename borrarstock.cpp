@@ -9,7 +9,6 @@ deleteStock::deleteStock(QWidget *parent) : QWidget(parent){
         // Botón Ingresar
         button = new QPushButton("Ingresar",this);
         button->setGeometry(50, 150, 65 , 25 );
-        button->setEnabled(true);
         connect(button ,SIGNAL(clicked()),this, SLOT(BorrarStock()));
 
         // Botón Cerrar
