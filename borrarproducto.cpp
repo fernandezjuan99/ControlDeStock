@@ -5,19 +5,19 @@ deleteProducto::deleteProducto(QWidget *parent) : QWidget(parent){
 
         setGeometry(750 , 100 , 225 , 200);
         setFixedSize( 225 , 200);
-        setWindowTitle("Eliminar Stock");
+        setWindowTitle("Eliminar Producto");
 
-        // Bot髇 Eliminar
+        // Bot贸n Eliminar
         button = new QPushButton("Eliminar",this);
         button->setGeometry(50, 150, 65 , 25 );
         button->setEnabled(true);
         connect(button ,SIGNAL(clicked()),this, SLOT(eliminarProducto()));
-        // Bot髇 Cerrar
+        // Bot贸n Cerrar
         button2 = new QPushButton("Cerrar",this);
         button2->setGeometry(120, 150, 65 , 25);
         connect(button2 ,SIGNAL(clicked()),this, SLOT(Salir()));
 
-        // Label de Campo C骴igo
+        // Label de Campo C贸digo
         LBLCODIGO = new QLabel("Codigo:",this);
         LBLCODIGO->setGeometry(20, 20, 100 , 23);
 
@@ -27,7 +27,7 @@ deleteProducto::deleteProducto(QWidget *parent) : QWidget(parent){
 
 }
 
-void deleteProducto::setVP(ventana_principal * v){  // Guarda la direcci髇 de la ventana principal
+void deleteProducto::setVP(ventana_principal * v){  // Guarda la direcci贸n de la ventana principal
         vp = v;
 }
 
@@ -37,7 +37,7 @@ void deleteProducto::eliminarProducto(){
             FILE *FP,*FC;
             int i = 0;
 
-                QString temp = CODIGO->text();      //Obtengo el C骴igo del produto y lo convierto en Char
+                QString temp = CODIGO->text();      //Obtengo el C贸digo del produto y lo convierto en Char
                 QByteArray ba = temp.toLatin1();
 
                 if((FP = fopen("temp","rb")) == NULL){
@@ -60,7 +60,7 @@ void deleteProducto::eliminarProducto(){
 
                 while(!feof(FP)){
 
-                        if((!strcmp(X.CODIGO,ba.data())) && i==0 ){    // Si el C骴igo que ingrese es igual al que lei de "temp"
+                        if((!strcmp(X.CODIGO,ba.data())) && i==0 ){    // Si el C贸digo que ingrese es igual al que lei de "temp"
                                                                        // e i es igual a 0 no lo paso a "temp2".
                             i = 1;                                     // Igualo i a 1 para solo borrarlo una vez.
                         }
@@ -71,11 +71,11 @@ void deleteProducto::eliminarProducto(){
                             fread(&X,sizeof(X),1,FP);
                         }
 
-                    if(i == 0){                                        // Si i es igual a 0, nunca se encontro el C骴igo
+                    if(i == 0){                                        // Si i es igual a 0, nunca se encontro el C贸digo
                                                                        // que ingrese para eliminar.
                         // Mensaje de Error
                         QMessageBox messageBox;
-                        messageBox.critical(0,"Error","No se encontro el c骴igo");
+                        messageBox.critical(0,"Error","No se encontro el c贸digo");
                         messageBox.setFixedSize(500,200);
                     }
 
