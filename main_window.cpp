@@ -8,7 +8,7 @@
 
 ventana_principal::ventana_principal(QWidget *parent) : QWidget(parent){
 
-        // Configura la tama駉 de la ventana
+        // Configura el tama帽o de la ventana
         setGeometry(500 , 250 , 675 , 475);
         setFixedSize( 675 , 475);
         setWindowTitle("Control de Stock");
@@ -19,52 +19,52 @@ ventana_principal::ventana_principal(QWidget *parent) : QWidget(parent){
         addstock = NULL;
         deletestock = NULL;
 
-        // Bot髇 Nuevo
+        // Bot贸n Nuevo
         button1 = new QPushButton("Nuevo",this);
         button1->setGeometry(30, 50, 60 , 25 );
         connect(button1 ,SIGNAL(clicked()),this, SLOT(mostrarNuevo()));
 
-        // Bot髇 Abrir
+        // Bot贸n Abrir
         button2 = new QPushButton("Abrir",this);
         button2->setGeometry(100, 50, 60 , 25 );
         connect(button2 ,SIGNAL(clicked()),this, SLOT(Abrir()));
 
-        // Bot髇 Guardar
+        // Bot贸n Guardar
         button3 = new QPushButton("Guardar",this);
         button3->setGeometry(170, 50, 60 , 25 );
         connect(button3, SIGNAL(clicked()),this, SLOT(Guardar()));
 
-        //Bot髇 Producto +
+        //Bot贸n Producto +
         button4 = new QPushButton("+",this);
         button4->setGeometry(240, 50, 25, 25 );
         connect(button4 ,SIGNAL(clicked()),this, SLOT(mostrarProducto()));
 
-        // Bot髇 Producto -
+        // Bot贸n Producto -
         button5 = new QPushButton("-",this);
         button5->setGeometry(267, 50, 25 , 25 );
         connect(button5 ,SIGNAL(clicked()),this, SLOT(mostrardeleteProducto()));
 
-        // Bot髇 Stock +
+        // Bot贸n Stock +
         button6 = new QPushButton("+",this);
         button6->setGeometry(302, 50, 25 , 25 );
         connect(button6 ,SIGNAL(clicked()),this, SLOT(mostrarAddStock()));
 
-        // Bot髇 Stock -
+        // Bot贸n Stock -
         button7 = new QPushButton("-",this);
         button7->setGeometry(329, 50, 25 , 25 );
         connect(button7 ,SIGNAL(clicked()),this, SLOT(mostrardeleteStock()));
 
-        // Bot髇 Buscar
+        // Bot贸n Buscar
         button8 = new QPushButton("Buscar",this);
         button8->setGeometry(466, 50, 60 , 25 );
         connect(button8 ,SIGNAL(clicked()),this, SLOT(Buscar()));
 
-        // Bot髇 de Refrescar
+        // Bot贸n de Refrescar
         button9 = new QPushButton("R",this);
         button9->setGeometry(536, 50, 25 , 25 );
         connect(button9 ,SIGNAL(clicked()),this, SLOT(refrescar()));
 
-        // Cuadro de B鷖queda
+        // Cuadro de B煤squeda
         text = new QLineEdit(this);
         text->setGeometry(364, 51, 100 , 23);
 
@@ -221,7 +221,7 @@ void ventana_principal::Buscar(){
 
      struct STOCK X;
      int i=0;    /** Se incrementa a medida que leo cada registro para moverme por cada fila de la tabla */
-     int cont=0; /** Cuenta las veces que se repite el C骴igo de un Registro y lo guarda en cont para setear esa cant. de filas de la Tabla */
+     int cont=0; /** Cuenta las veces que se repite el C贸digo de un Registro y lo guarda en cont para setear esa cant. de filas de la Tabla */
 
 
      FILE *FP;
@@ -265,7 +265,7 @@ void ventana_principal::Buscar(){
                 Tabla->setItem(i, 2, new QTableWidgetItem(QString::number(X.CANTIDAD)));
                 Tabla->setItem(i, 3, new QTableWidgetItem);
 
-                if(X.CANTIDAD >= 20){                                    // Comentado en la funci髇
+                if(X.CANTIDAD >= 20){                                    // Comentado en la funci贸n
                                                                          //ventana_principal::actualizarTabla()
                     Tabla->item(i, 3)->setBackground(Qt::green);
 
@@ -371,7 +371,7 @@ void ventana_principal::Guardar(){ // Guardo el proyecto
 
 void ventana_principal::refrescar(){
 
-        //Cuando toco el bot髇 "R" vuelvo a leer "temp"
+        //Cuando toco el bot贸n "R" vuelvo a leer "temp"
 
         actualizarTabla();
 }
