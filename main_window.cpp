@@ -144,7 +144,7 @@ void ventana_principal::mostrardeleteStock()    // Muestra la ventana Stock -
 }
 
 
-void ventana_principal::actualizarTabla(){    // Vuelve a leer el archivo "temp"
+void ventana_principal::actualizarTabla(){    // Lee el archivo "temp" y lo muestra en la tabla.
 
     FILE *FP;
     int cant_filas = 0;  /*!< Almacena la cantidad de registros para asignar a la tabla esa cantidad de filas */
