@@ -152,14 +152,13 @@ void ventana_principal::actualizarTabla(){    // Lee el archivo "temp" y lo mues
     struct STOCK X;
 
     if((FP = fopen("temp","rb")) == NULL){              //  Abro "temp" en modo lectura y cuento la cantidad
-		printf("ERROR");                                //  de Registros y lo guardo en cant_filas
+		printf("ERROR");                        //  de Registros y lo guardo en cant_filas
 		return;
     }
     fseek(FP , 0 , 2);
     cant_filas = ftell(FP)/sizeof(X);
 
-                                                        // Configuracion de la Tabla
-
+    // Configuracion de la Tabla
     QStringList horzHeader;
     horzHeader << "Codigo" << "Producto" << "Cantidad" << "Estado";
     Tabla->setHorizontalHeaderLabels(horzHeader);
