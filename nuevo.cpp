@@ -5,7 +5,7 @@
 
 
  static int i = 1; /*
-                    * Cuando pulso el bot髇 "Ingresar" se tiene que abrir un flujo al archivo "temp".
+                    * Cuando pulso el bot贸n "Ingresar" se tiene que abrir un flujo al archivo "temp".
                     * Si este no existe, cuando lo leo en modo r+b sale error,
                     * Si existe y lo leo en w+b me lo va a borrar cada vez que toco el boton "Ingresar".
                     * Entonces cuando este en 1 se pone en modo w+b y cuando este en 0 se pone en r+b
@@ -17,13 +17,13 @@ Nuevo::Nuevo(QWidget *parent) : QWidget(parent){
         setWindowTitle("Nueva Tabla");
 
 
-        // Bot髇 Ingresar
+        // Bot贸n Ingresar
         button1 = new QPushButton("Ingresar",this);
         button1->setGeometry(50, 150, 65 , 25 );
         button1->setEnabled(false);
         connect(button1 ,SIGNAL(clicked()),this, SLOT(NuevaTabla()));
 
-        // Bot髇 Finalizar
+        // Bot贸n Finalizar
         button2 = new QPushButton("Finalizar",this);
         button2->setGeometry(120, 150, 65 , 25);
         connect(button2 ,SIGNAL(clicked()),this, SLOT(Fin()));
@@ -51,14 +51,14 @@ Nuevo::Nuevo(QWidget *parent) : QWidget(parent){
         connect(CANTIDAD,SIGNAL(textChanged(const QString)),this,SLOT(Chequeo()));
 }
 
-void Nuevo::setVP(ventana_principal * v){  // Guarda la direcci髇 de la ventana principal
+void Nuevo::setVP(ventana_principal * v){  // Guarda la direcci贸n de la ventana principal
         vp = v;
 }
 
 
 void Nuevo::NuevaTabla(){ // Agrega un registro
 
-	struct STOCK X;
+    struct STOCK X;
     FILE *FP;
 
     //printf("\ni value %d",i);
