@@ -10,7 +10,6 @@ deleteProducto::deleteProducto(QWidget *parent) : QWidget(parent){
         // Botón Eliminar
         button = new QPushButton("Eliminar",this);
         button->setGeometry(50, 150, 65 , 25 );
-        button->setEnabled(true);
         connect(button ,SIGNAL(clicked()),this, SLOT(eliminarProducto()));
         // Botón Cerrar
         button2 = new QPushButton("Cerrar",this);
